@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Control",
+"class": "ScoreItem",
+"language": "GDScript",
+"path": "res://Scripts/ScoreItem.gd"
+} ]
+_global_script_class_icons={
+"ScoreItem": ""
+}
+
+[application]
+
+config/name="Anotador de Truco Simple"
+run/main_scene="res://Scenes/Game.tscn"
+config/icon="res://Sprites/scoreItems/scoreItems_001/5.PNG"
+
+[autoload]
+
+Settings="*res://Scripts/SettingsPanel.gd"
+
+[display]
+
+window/size/width=576
+window/size/height=1024
+window/size/test_width=288
+window/size/test_height=512
+window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
+
+[rendering]
+
+quality/2d/use_pixel_snap=true
+environment/default_environment="res://default_env.tres"

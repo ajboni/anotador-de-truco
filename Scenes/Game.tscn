@@ -1,0 +1,275 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Lane.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Button.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/cog.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/theme.tres" type="Theme" id=5]
+[ext_resource path="res://Scripts/SettingsPanel.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/OptionButton.gd" type="Script" id=7]
+[ext_resource path="res://Styles/VSeparator.tres" type="StyleBox" id=8]
+
+[node name="root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Lanes" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Nosotros" parent="Lanes" instance=ExtResource( 2 )]
+editor/display_folded = true
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 288.0
+margin_bottom = 1024.0
+
+[node name="Title" parent="Lanes/Nosotros/vContainer" index="0"]
+margin_right = 288.0
+
+[node name="Score" parent="Lanes/Nosotros/vContainer" index="1"]
+margin_right = 288.0
+
+[node name="ScoreItem1" parent="Lanes/Nosotros/vContainer/Score" index="0"]
+margin_right = 288.0
+
+[node name="ScoreItem2" parent="Lanes/Nosotros/vContainer/Score" index="1"]
+margin_right = 288.0
+
+[node name="ScoreItem3" parent="Lanes/Nosotros/vContainer/Score" index="2"]
+margin_right = 288.0
+
+[node name="HSeparator" parent="Lanes/Nosotros/vContainer/Score" index="3"]
+margin_right = 288.0
+
+[node name="ScoreItem4" parent="Lanes/Nosotros/vContainer/Score" index="4"]
+margin_right = 288.0
+
+[node name="ScoreItem5" parent="Lanes/Nosotros/vContainer/Score" index="5"]
+margin_right = 288.0
+
+[node name="ScoreItem6" parent="Lanes/Nosotros/vContainer/Score" index="6"]
+margin_right = 288.0
+
+[node name="HBoxContainer" parent="Lanes/Nosotros/vContainer/Score" index="7"]
+margin_right = 288.0
+
+[node name="Lane_Buttons" parent="Lanes/Nosotros/vContainer/Score/HBoxContainer" index="0"]
+margin_right = 288.0
+
+[node name="substractScore" parent="Lanes/Nosotros/vContainer/Score/HBoxContainer/Lane_Buttons" index="0"]
+margin_right = 288.0
+
+[node name="addScore" parent="Lanes/Nosotros/vContainer/Score/HBoxContainer/Lane_Buttons" index="1"]
+margin_left = 144.0
+margin_right = 288.0
+
+[node name="crown" parent="Lanes/Nosotros" index="1"]
+margin_left = 1.0975
+margin_right = 61.0975
+
+[node name="Ellos" parent="Lanes" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 288.0
+margin_right = 576.0
+margin_bottom = 1024.0
+
+[node name="Title" parent="Lanes/Ellos/vContainer" index="0"]
+margin_right = 288.0
+
+[node name="Score" parent="Lanes/Ellos/vContainer" index="1"]
+margin_right = 288.0
+
+[node name="ScoreItem1" parent="Lanes/Ellos/vContainer/Score" index="0"]
+margin_right = 288.0
+
+[node name="ScoreItem2" parent="Lanes/Ellos/vContainer/Score" index="1"]
+margin_right = 288.0
+
+[node name="ScoreItem3" parent="Lanes/Ellos/vContainer/Score" index="2"]
+margin_right = 288.0
+
+[node name="HSeparator" parent="Lanes/Ellos/vContainer/Score" index="3"]
+margin_right = 288.0
+
+[node name="ScoreItem4" parent="Lanes/Ellos/vContainer/Score" index="4"]
+margin_right = 288.0
+
+[node name="ScoreItem5" parent="Lanes/Ellos/vContainer/Score" index="5"]
+margin_right = 288.0
+
+[node name="ScoreItem6" parent="Lanes/Ellos/vContainer/Score" index="6"]
+margin_right = 288.0
+
+[node name="HBoxContainer" parent="Lanes/Ellos/vContainer/Score" index="7"]
+margin_right = 288.0
+
+[node name="Lane_Buttons" parent="Lanes/Ellos/vContainer/Score/HBoxContainer" index="0"]
+margin_right = 288.0
+
+[node name="crown" parent="Lanes/Ellos" index="1"]
+margin_left = 219.83
+margin_right = 279.83
+hint_tooltip = "Ganador!"
+
+[node name="Button" type="Button" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -33.5
+margin_top = 9.0
+margin_right = 33.5
+margin_bottom = 86.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 40, 40 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="SettingsPanel" type="PopupPanel" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_vertical = 2
+theme = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel/VBoxContainer"]
+margin_right = 568.0
+margin_bottom = 808.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="SettingsPanel/VBoxContainer/VBoxContainer"]
+editor/display_folded = true
+modulate = Color( 0.933333, 0.933333, 0.933333, 1 )
+margin_right = 568.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/VBoxContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 150 )
+text = "Opciones"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsPanel/VBoxContainer/VBoxContainer"]
+margin_top = 200.0
+margin_right = 568.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_top = 18.0
+margin_right = 282.0
+margin_bottom = 82.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Puntos"
+align = 1
+valign = 1
+
+[node name="OptionButton" type="OptionButton" parent="SettingsPanel/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 286.0
+margin_right = 568.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+custom_constants/hseparation = 10
+text = "30"
+align = 2
+items = [ "30", null, false, 30, null, "24", null, false, 24, null, "15", null, false, 15, null, "12", null, false, 12, null ]
+selected = 0
+script = ExtResource( 7 )
+
+[node name="HSeparator" type="HSeparator" parent="SettingsPanel/VBoxContainer/VBoxContainer"]
+margin_top = 300.0
+margin_right = 568.0
+margin_bottom = 304.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SettingsPanel/VBoxContainer"]
+margin_top = 812.0
+margin_right = 568.0
+margin_bottom = 1016.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Restart_button" type="Button" parent="SettingsPanel/VBoxContainer/VBoxContainer2"]
+modulate = Color( 0.92549, 0.627451, 0.627451, 1 )
+margin_right = 568.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+text = "Reiniciar"
+
+[node name="Back_button" type="Button" parent="SettingsPanel/VBoxContainer/VBoxContainer2"]
+modulate = Color( 0.74902, 0.854902, 0.713726, 1 )
+margin_top = 104.0
+margin_right = 568.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 100 )
+text = "Volver"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_right = 2.0
+size_flags_vertical = 3
+custom_styles/separator = ExtResource( 8 )
+
+[node name="ResetGameConfirmation" type="ConfirmationDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -103.0
+margin_right = 175.0
+margin_bottom = 103.0
+rect_min_size = Vector2( 300, 70 )
+theme = ExtResource( 5 )
+popup_exclusive = true
+window_title = ""
+dialog_text = "REiniciar Juego?"
+[connection signal="button_down" from="Button" to="SettingsPanel" method="_on_Button_button_down"]
+[connection signal="pressed" from="Button" to="SettingsPanel" method="_on_Button_pressed"]
+[connection signal="focus_exited" from="SettingsPanel" to="Button" method="_on_SettingsPanel_focus_exited"]
+[connection signal="item_selected" from="SettingsPanel/VBoxContainer/VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[connection signal="pressed" from="SettingsPanel/VBoxContainer/VBoxContainer2/Restart_button" to="." method="_on_Restart_button_pressed"]
+[connection signal="pressed" from="SettingsPanel/VBoxContainer/VBoxContainer2/Back_button" to="." method="_on_Back_button_pressed"]
+[connection signal="confirmed" from="ResetGameConfirmation" to="." method="_on_ConfirmationDialog_confirmed"]
+
+[editable path="Lanes/Nosotros"]
+
+[editable path="Lanes/Nosotros/vContainer/Score"]
+
+[editable path="Lanes/Nosotros/vContainer/Score/HBoxContainer/Lane_Buttons"]
+
+[editable path="Lanes/Ellos"]
+
+[editable path="Lanes/Ellos/vContainer/Score"]

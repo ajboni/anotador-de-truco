@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Fonts/default_font.tres" type="DynamicFont" id=2]
+
+[node name="Lane_Buttons" type="HBoxContainer"]
+margin_right = 576.0
+margin_bottom = 70.0
+custom_constants/separation = 0
+
+[node name="substractScore" type="Button" parent="."]
+margin_right = 576.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 10
+text = "-"
+
+[node name="addScore" type="Button" parent="."]
+visible = false
+margin_left = 288.0
+margin_right = 576.0
+margin_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 10
+text = "+"
