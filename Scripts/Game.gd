@@ -22,7 +22,7 @@ func _restart_game():
 		$SettingsPanel._on_Button_button_down()
 	$Lanes/Ellos/vContainer/Score.restart()
 	$Lanes/Nosotros/vContainer/Score.restart()
-	Settings.winning_score = Settings.config.get_value("game", "winning_score")
+	Settings.winning_score = Settings.config.get_value("game", "winning_score", 30)
 	Settings.game_state = Settings.GAME_STATE.started;
 	print("Starting a new game at: ", 	Settings.winning_score, " points")
 

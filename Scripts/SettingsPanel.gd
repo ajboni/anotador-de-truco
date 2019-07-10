@@ -10,6 +10,14 @@ var scores = {}
 enum GAME_STATE { idle, started, finished }
 var game_state = GAME_STATE.idle;
 
+func _ready():
+	var err = config.load("user://settings.cfg")
+	if err == OK: # if not, something went wrong with the file loading
+	    # Look for the display/width pair, and default to 1024 if missing
+		winning_score = config.get_value("game", "winning_score", 30)	    	
+		config.set_value("game", "winning_score", winning_score)	    			
+		config.save("user://settings.cfg")	
+
 func add_score(lane, value):
 	scores[lane] = value;
 	check_scores();
@@ -26,12 +34,7 @@ func check_scores():
 		game_state = GAME_STATE.started;
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	var err = config.load("user://settings.cfg")
-	if err == OK: # if not, something went wrong with the file loading
-	    # Look for the display/width pair, and default to 1024 if missing
-	    winning_score = config.get_value("game", "winning_score", 30)	    				
-	    config.save("user://settings.cfg")	
+
 
 	#$VBoxContainer/HBoxContainer/OptionButton.set(
 	
